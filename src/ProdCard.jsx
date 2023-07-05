@@ -24,10 +24,12 @@ const ProdCard = () => {
     if(items) {
       setCards(items)
     }
+    console.log(items);
   }, []);
 
   useEffect(() => {
     localStorage.setItem("cards", JSON.stringify(cards))
+    console.log('second useeffect');
   }, [cards]);
 
   const handleNameChange = (e) => {
@@ -65,7 +67,7 @@ const ProdCard = () => {
         </label>
         <label>
           Product Price
-          <input type="text" value={price} onChange={handlePriceChange} />
+          <input type="number" value={price} onChange={handlePriceChange} />
         </label>
         <label>
           Product Image URL
