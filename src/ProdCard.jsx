@@ -21,15 +21,14 @@ const ProdCard = () => {
 
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem("cards"));
-    if(items) {
-      setCards(items)
+    if (items?.length) {
+      setCards(items);
     }
-    console.log(items);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("cards", JSON.stringify(cards))
-    console.log('second useeffect');
+    localStorage.setItem("cards", JSON.stringify(cards));
+    console.log("second useeffect");
   }, [cards]);
 
   const handleNameChange = (e) => {
@@ -46,12 +45,12 @@ const ProdCard = () => {
   };
 
   const addCard = () => {
-      const card = { name, description, price, image };
-      setCards([...cards, card]);
-      setName("");
-      setDescription("");
-      setPrice("");
-      setImage("");
+    const card = { name, description, price, image };
+    setCards([...cards, card]);
+    setName("");
+    setDescription("");
+    setPrice("");
+    setImage("");
   };
 
   return (
@@ -71,7 +70,7 @@ const ProdCard = () => {
         </label>
         <label>
           Product Image URL
-          <input type="text" value={image} onChange={handleImgChange}  />
+          <input type="text" value={image} onChange={handleImgChange} />
         </label>
         <button onClick={addCard}>Add Card</button>
       </div>
@@ -84,7 +83,7 @@ const ProdCard = () => {
               name={carditem.name}
               description={carditem.description}
               price={carditem.price}
-              image ={carditem.image}
+              image={carditem.image}
             />
           );
         })}

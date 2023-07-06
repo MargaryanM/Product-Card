@@ -7,7 +7,7 @@ import NavBar from "./NavBar/NavBar";
 const App = () => {
   return (
     <>
-    <NavBar />
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<ProdCard />} />
